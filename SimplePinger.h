@@ -96,6 +96,13 @@ public:
     /*! If Ping() returns false, this will show the reason why a range is not available. 
   @returns a value from SIMPLEPINGER_TRIGGERMODE_* */
   int getLastError();
+  
+  /*! Gets the time of the last ping trigger. NB this is the time when the module trigger pin was set high,
+  which will not have occurred on calls to ping() that return SIMPLEPINGER_ERROR_SUBSTITUTE, 
+  SIMPLEPINGER_ERROR_UNREADY, or SIMPLEPINGER_ERROR_HARDFAIL . Does not give the actual time when the sound
+  bounced off the obstacle.
+  @returns Value of millis() just before rising edge of trigger pin. */
+  unsigned long getLastPingTime();
 
 //!@}  
   

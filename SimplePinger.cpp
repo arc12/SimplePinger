@@ -89,6 +89,9 @@ SimplePinger::SimplePinger(uint8_t triggerPin, uint8_t echoPin){
 		  }
 	  }
 	  
+	  //store this for throttling and for info
+	  _lastPingTime=millis();
+	  
 	  //tell the module to emit a pulse
 	  *_triggerOutput |= _triggerBit;  // Set trigger pin high, this tells the sensor to send out a ping.
 	  delayMicroseconds(11);           // Wait long enough for the sensor to realize the trigger pin is high. Sensor specs say to wait at least 10uS.
@@ -129,7 +132,11 @@ SimplePinger::SimplePinger(uint8_t triggerPin, uint8_t echoPin){
   
   int SimplePinger::getLastError(){
 	  return _lastError;
-  }  
+  } 
+  
+  unsigned long SimplePinger::getLastPingTime(){
+	  return _lastPingTime;
+  }
 
   void SimplePinger::setMaxRange(unsigned int maxRange_mm){
 	  _maxRange_mm=maxRange_mm;

@@ -108,6 +108,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad71279e2eaafd4872b5612be55968e67"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_pinger.html#ad71279e2eaafd4872b5612be55968e67">ping</a> ()</td></tr>
 <tr class="memitem:a003f7fe5afaae67dca1805c730a1736d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_pinger.html#a003f7fe5afaae67dca1805c730a1736d">getRange</a> ()</td></tr>
 <tr class="memitem:a79be789c13d73aed4cbcb491beef330c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_pinger.html#a79be789c13d73aed4cbcb491beef330c">getLastError</a> ()</td></tr>
+<tr class="memitem:a49449d9d2eb195e18c9ff6cfa36a81de"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simple_pinger.html#a49449d9d2eb195e18c9ff6cfa36a81de">getLastPingTime</a> ()</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Change Operating Parameters</div></td></tr>
 <tr><td colspan="2"><div class="groupText"><p>Change the values of various operating parameters. These all have module-specific defaults and need not be called if the default value is appropriate. </p>
 </div></td></tr>
@@ -179,6 +180,24 @@ Public Member Functions</h2></td></tr>
 <div class="memdoc">
 <p>If Ping() returns false, this will show the reason why a range is not available. </p>
 <dl class="section return"><dt>Returns:</dt><dd>a value from SIMPLEPINGER_TRIGGERMODE_* </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a49449d9d2eb195e18c9ff6cfa36a81de"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long <a class="el" href="class_simple_pinger.html#a49449d9d2eb195e18c9ff6cfa36a81de">SimplePinger::getLastPingTime</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Gets the time of the last ping trigger. NB this is the time when the module trigger pin was set high, which will not have occurred on calls to <a class="el" href="class_simple_pinger.html#ad71279e2eaafd4872b5612be55968e67">ping()</a> that return SIMPLEPINGER_ERROR_SUBSTITUTE, SIMPLEPINGER_ERROR_UNREADY, or SIMPLEPINGER_ERROR_HARDFAIL . Does not give the actual time when the sound bounced off the obstacle. </p>
+<dl class="section return"><dt>Returns:</dt><dd>Value of millis() just before rising edge of trigger pin. </dd></dl>
 
 </div>
 </div>
@@ -346,7 +365,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 2 2014 01:34:38 for SimplePinger by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 2 2014 20:19:09 for SimplePinger by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.0
 </small></address>
