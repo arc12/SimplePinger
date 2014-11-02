@@ -1,4 +1,4 @@
 SimplePinger
 ============
 
-Arduino/ATMega library for ultrasonic range-finder HC0SR04
+Arduino/ATMega library for ultrasonic range-finder HC-SR04
