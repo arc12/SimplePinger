@@ -1,0 +1,9 @@
+SimplePinger	KEYWORD1
+ping	KEYWORD2
+getRange	KEYWORD2
+getLastError	KEYWORD2
+setMaxRange	KEYWORD2
+setSpeedOfSound	KEYWORD2
+setTriggerMode	KEYWORD2
+setMinTriggerPeriod	KEYWORD2
+setWaitUntilQuiet	KEYWORD2
